@@ -9,13 +9,14 @@ driver = webdriver.Chrome(options=chrome_options)
 
 driver.get("https://YOURSCHOOLEXTENSIONHERE.managebac.com/student")
 
-def login(email, password):
+def login():
     username = driver.find_element(By.ID, "session_login")
     username.clear()
-    username.send_keys(email)
+    username.send_keys("Your Email here")
+
     password = driver.find_element(By.ID, "session_password")
     password.clear()
-    password.send_keys(password)
+    password.send_keys("Your Password Here")
     driver.find_element(By.NAME, "commit").click()
     return driver.get_cookies()
 
